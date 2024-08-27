@@ -1,0 +1,521 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'audiowide', cursive;
+}
+
+body{
+    overflow: hidden;
+    background: url(./assets/UI/wallpaper2.jpeg);
+    background-position: center;
+}
+
+.app {
+    transform: scale(0.70); 
+    transform-origin: top left; 
+    margin-top: 0.5%; 
+    margin-right: 12.5%; 
+    width: 143.33%; 
+    height: 100vh; 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    min-width: 1000px;
+}
+/* ANTIGO 
+.app{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+   
+    min-width: 1000px;
+} */
+.planeta-girando{
+    transform: scale(3);
+    width: 2rem;
+    
+}
+.head-status{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    gap: 15rem;
+    margin-bottom: 1.3rem;
+}
+#mapa{
+    width: 100%;
+    border-radius: 10rem;
+    background-color: #0000004f;
+    border: 1px solid white;
+    
+}
+
+
+
+@media (max-width: 1000px) {
+    .app {
+        flex-direction: column;
+        align-items: center; 
+        min-width: auto;
+    }
+    
+    .hud-side, .hud-mid, .hud-right {
+        width: 100%; 
+    }
+    
+    .hud-mid .container-mission, .hud-right .personagem {
+        width: 90%; 
+    }
+}
+
+.hud-side{
+    margin-top: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+    padding: 1rem 3rem;
+}
+.hud-mid{
+    
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 1rem;
+    padding-left: 12rem;
+    
+}
+.personagem{
+    display: flex;
+    justify-content: center;
+    gap: 0.2rem;
+    
+
+}
+.container-hp{
+    width: 12rem;
+}
+.personagem  img{
+    width: 2rem;
+
+}
+.info{
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    letter-spacing: 0.1rem;
+}
+.progress-hp{
+    height: 0.5rem;
+    border-radius: 1px;
+    background-color: #44444450;
+    
+}
+.status{
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+.container-energy{
+    width: 12rem;
+    
+}
+.progress-energy{
+    height: 0.5rem;
+    border-radius: 1px;
+    background-color:#44444450;
+    
+    
+}
+.missions-menu{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    max-width: 600px;
+    color: white;
+}
+.missions-menu-head{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 0.8rem;
+   gap: 0.3rem;
+    
+}
+
+.mission-item {
+    background-color: #05345a;
+    padding: 0.7rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.mission-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.mission-id {
+    margin-inline: 1.2rem;
+    font-weight: bold;
+}
+
+.mission-desc {
+    font-size: 0.9rem;
+    margin-inline: 1.2rem;
+    word-break: keep-all;
+    color: #c0c0c0;
+}
+
+.mission-rewards {
+    display: flex;
+    justify-content: space-between;
+    margin-inline: 1.2rem;
+    padding: 0.8rem 0rem;
+}
+
+.reward {
+    background-color: #1853ca;
+    border-radius: 5px;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.85rem;
+}
+
+
+.mission-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-inline: 1.2rem;
+    align-items: center;
+}
+
+.mission-timer {
+    font-size: 0.8rem;
+    color: #ffcc00;
+}
+.missions-lista {
+    display: flex;
+    flex-direction: column; 
+    margin: 10px;
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 20px;
+}
+/*chat*/
+.missions-lista::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+}
+
+/* Estiliza o fundo da barra de rolagem */
+.missions-lista::-webkit-scrollbar-track {
+    background: #031c3183; /* Fundo da barra de rolagem */
+}
+
+/* Estiliza o thumb (a parte que você arrasta) da barra de rolagem */
+.missions-lista::-webkit-scrollbar-thumb {
+    background-color: #044dbb; /* Cor do thumb */
+    border-radius: 10px; /* Deixa o thumb arredondado */
+}
+
+/* Estiliza o thumb ao passar o mouse */
+.missions-lista::-webkit-scrollbar-thumb:hover {
+    background-color: #033b9b; /* Cor do thumb ao passar o mouse */
+}
+
+.btn-accept-mission {
+    background-color: #044dbb;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-accept-mission:hover {
+    background-color: #0369db;
+}
+
+.bar-hp{
+    width: 100%;
+    height: 0.5rem;
+    background-color: #5a0516;
+}
+.bar-energy{
+    width: 100%;
+    height: 0.5rem;
+    background-color: #05345a;
+}
+
+
+.portrait img{
+    width: auto;
+    height: 12rem;
+    border: 2px solid #000000;
+}
+.portrait{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size:12px;
+}
+
+
+
+
+.container-mission{
+    display: flex;
+   width: 30rem;
+   padding-top: 1rem;
+   text-align: center;
+   flex-direction: column;
+   gap: 0.6rem;
+   
+    
+}
+
+.progress-bar-mission{
+    
+    height: 1.8rem;
+    background-color: rgba(48, 48, 48, 0.534);
+    border-radius: 0.4rem;
+    padding: 3px;
+    border: 2px solid white;
+    
+}
+.mission-bar{
+    
+    height: 1.2rem;
+    border-radius: 0.3rem;
+    width: 25rem;
+    background-color: #044dbb;
+    
+}
+.menu-player,.menu-jogo{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.main-content{
+    width: 100%;
+}
+.hud-right{
+    padding: 1rem;
+}
+.material-symbols-outlined{
+    background: url(./Nebula\ Blue.png);
+    padding: 0.3rem;
+    border-radius: 0.3rem;
+    color: white;
+    cursor: pointer;
+}
+input{
+    margin-top: 1rem;
+    background-color: black;
+    border: none;
+    color: white;
+}
+textarea{
+    word-wrap: break-word;
+    overflow: hidden;
+    color: green;
+    padding: 1rem 2rem;
+    background: none;
+    
+    
+}
+
+
+#terminal{
+    margin-top: 12rem;
+}
+
+strong{
+    color: #fcb900;
+    font-weight: 300;
+}
+.menu-content{
+  background-color: #000000a1;
+  border-radius: 1rem;   
+  border: 1px solid rgba(255, 255, 255, 0.301);
+  
+}
+.menu-content-hidden{
+    background-color: none;
+    border-radius: none;
+    border: none;
+}
+
+
+
+
+
+
+#pontosDisponiveis{
+    color: #5a0516;
+    font-size: 14px;
+}
+
+h2,h3,h1{
+    color: white;
+    text-align: center;
+}
+.player-info{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    
+    
+}
+.pontos{
+    margin-bottom: 0.8rem;
+}
+
+
+
+#close-menu{
+    transform: scale(2);
+    color: rgb(255, 6, 6);
+    vertical-align: middle;
+    
+}
+#text-missao{
+    color: white;
+}
+.container-map{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 1.6rem;
+    
+}
+.close-map{
+    background-color: #00000054;
+    border-radius: 15rem;
+    padding: 0.2rem 1rem;
+    margin-bottom: 1rem;
+    
+    
+}
+/*Inventario */
+.inventario-content{
+    display: flex;
+    color: white;
+    flex-direction: column;
+    min-width: 900px;
+    padding: 1.5rem;
+    gap: 1rem;
+    
+    
+}
+.inventario-head{
+    display: flex;
+    justify-content: space-around;
+    padding: 0.8rem;
+    font-size: 19px;
+    background-color: #05345a7c;
+    
+    
+
+    
+   
+}
+.qtdItem{
+    color: #ffcc00;
+    font-size: 20px;
+}
+
+.inventario-main{
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around;
+}
+.icon-item{
+    width: 2rem;
+    
+}
+.inventario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem; 
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 450px;
+    
+    
+    
+    
+}
+.inventario-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    
+    
+    
+}
+.inventario-item{
+    display: flex;
+    align-items: center;
+    padding: 0.3rem 1rem;
+    border-radius: 0.2rem;
+    width: 100%;
+    background-color: #05345a;
+    gap: 0.2rem;
+    margin-right: 0.3rem;
+
+}
+.inventario-item.raro{
+    color: #1c9cf1;
+}
+.inventario-item.epico{
+    color: #8001e9;
+}
+.inventario-item.lendario{
+    color: rgb(204, 109, 0);
+}
+.inventario::-webkit-scrollbar {
+    width: 8px; 
+}
+
+
+.inventario::-webkit-scrollbar-track {
+    background: #031c3183; 
+}
+
+
+.inventario::-webkit-scrollbar-thumb {
+    background-color: #044dbb; /* Cor do thumb */
+    border-radius: 10px; /* Deixa o thumb arredondado */
+}
+
+
+.inventario::-webkit-scrollbar-thumb:hover {
+    background-color: #033b9b; /* Cor do thumb ao passar o mouse */
+}

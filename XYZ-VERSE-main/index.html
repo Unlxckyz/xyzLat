@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Jogo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body>
+    <div class="app">
+        <div class="hud-side">
+            <div class="menu-player">
+                <span id="character-icon" onclick="showStatus()" class="material-symbols-outlined">
+                    person
+                </span>
+                <span class="material-symbols-outlined">
+                    backpack
+                </span>
+                <span onclick="showQuest()" class="material-symbols-outlined">
+                    settings_accessibility
+                </span>
+                <span id="map-icon" onclick="showMap()" class="material-symbols-outlined">
+                    map
+                </span>
+
+            </div>
+            <div>
+                <img src="./assets/UI/planet-1.gif" alt="" srcset="" class="planeta-girando">
+
+            </div>
+            <div class="menu-jogo">
+                <span class="material-symbols-outlined">
+                    rocket_launch
+                </span>
+                <span class="material-symbols-outlined">
+                    sync_saved_locally
+                </span>
+                <span class="material-symbols-outlined">
+                    travel_explore
+                </span>
+                <span class="material-symbols-outlined">
+                    home_repair_service
+                </span>
+
+            </div>
+
+        </div>
+        <div class="hud-mid">
+            <div class="container-mission">
+                <div class="progress-bar-mission">
+                    <div class="mission-bar"></div>
+                </div>
+                <span id="text-missao">Nenhuma missão em progresso @</span>
+            </div>
+            <div class="menu-content" id="menu-content">
+                <div class="inventario-content">
+                    <div class=""
+                        style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 0.2rem;">
+                        <h1>Inventario</h1>
+                        <span id="close-menu" onclick="closeMenu()">x</span>
+                    </div>
+
+                    <div class="inventario-head">
+                        <div class="head-inv">
+                            <span>Equipamentos</span>
+                        </div>
+                        <div class="head-inv">
+                            <span>Recursos</span>
+                        </div>
+
+                    </div>
+                    <div class="inventario-main">
+                        <div class="inventario">
+                            <div class="inventario-item"><img src="./equip.png" class="icon-item" alt="" srcset="">
+                                <span class="inventario-item raro">Photon Rifle</span><span class="qtdItem">x1</span>
+                            </div>
+                            <div class="inventario-item"><img src="./equip.png" class="icon-item" alt="" srcset="">
+                                <span class="inventario-item epico">Quantum Shield</span><span class="qtdItem">x1</span>
+                            </div>
+                            <div class="inventario-item"><img src="./equip.png" class="icon-item" alt="" srcset="">
+                                <span class="inventario-item lendario">Nano Blade</span><span class="qtdItem">x2</span>
+                            </div>
+                            <div class="inventario-item"><img src="./equip.png" class="icon-item" alt="" srcset="">
+                                <span class="inventario-item lendario">Plasma Grenade</span><span class="qtdItem">x5</span>
+                            </div>
+                            <div class="inventario-item"><img src="./equip.png" class="icon-item" alt="" srcset="">
+                                <span class="inventario-item raro">Void Armor</span><span class="qtdItem">x1</span>
+                            </div>
+                            <div class="inventario-item"><img src="./equip.png" class="icon-item" alt="" srcset="">
+                                <span class="inventario-item">Photon Rifle</span><span class="qtdItem">x1</span>
+                            </div>
+                            <div class="inventario-item"><img src="./equip.png" class="icon-item" alt="" srcset="">
+                                <span class="inventario-item epico">Quantum Shield</span><span class="qtdItem">x1</span>
+                            </div>
+                            <div class="inventario-item"><img src="./equip.png" class="icon-item" alt="" srcset="">
+                                <span class="inventario-item">Nano Blade</span><span class="qtdItem">x2</span>
+                            </div>
+                            <div class="inventario-item"><img src="./equip.png" class="icon-item" alt="" srcset="">
+                                <span class="inventario-item lendario">Plasma Grenade</span><span class="qtdItem">x5</span>
+                            </div>
+                            <div class="inventario-item"><img src="./equip.png" class="icon-item" alt="" srcset="">
+                                <span class="inventario-item epico">Void Armor</span><span class="qtdItem">x1</span>
+                            </div>
+
+
+
+
+                        </div>
+                        <div class="inventario">
+                            <div class="inventario-item"><img src="./recursos.png" class="icon-item" alt="" srcset="">
+                                <span class="inventario-item raro">Photon Rifle</span><span class="qtdItem">x1</span></div>
+                            <div class="inventario-item"><img src="./recursos.png" class="icon-item" alt="" srcset="">
+                                <span class="inventario-item epico">Quantum Shield</span><span class="qtdItem">x1</span></div>
+                            <div class="inventario-item"><img src="./recursos.png" class="icon-item" alt="" srcset="">
+                                <span class="inventario-item lendario">Nano Blade</span><span class="qtdItem">x2</span></div>
+                            <div class="inventario-item"><img src="./recursos.png" class="icon-item" alt="" srcset="">
+                                <span class="inventario-item">Plasma Grenade</span><span class="qtdItem">x5</span></div>
+                            <div class="inventario-item"><img src="./recursos.png" class="icon-item" alt="" srcset="">
+                                <span class="inventario-item">Void Armor</span><span class="qtdItem">x1</span></div>
+                            <div class="inventario-item"><img src="./recursos.png" class="icon-item" alt="" srcset="">
+                                <span class="inventario-item raro">Photon Rifle</span><span class="qtdItem">x1</span></div>
+                            <div class="inventario-item"><img src="./recursos.png" class="icon-item" alt="" srcset="">
+                                <span class="inventario-item raro">Quantum Shield</span><span class="qtdItem">x1</span></div>
+                            <div class="inventario-item"><img src="./recursos.png" class="icon-item" alt="" srcset="">
+                                <span class="inventario-item raro">Nano Blade</span><span class="qtdItem">x2</span></div>
+                            <div class="inventario-item"><img src="./recursos.png" class="icon-item" alt="" srcset="">
+                                <span class="inventario-item epico">Plasma Grenade</span><span class="qtdItem">x5</span></div>
+                            <div class="inventario-item"><img src="./recursos.png" class="icon-item" alt="" srcset="">
+                                <span class="inventario-item">Void Armor</span><span class="qtdItem">x1</span></div>
+                            <div class="inventario-item"><img src="./recursos.png" class="icon-item" alt="" srcset="">
+                                <span class="inventario-item">Photon Rifle</span><span class="qtdItem">x1</span></div>
+                            <div class="inventario-item"><img src="./recursos.png" class="icon-item" alt="" srcset="">
+                                <span class="inventario-item epico">Quantum Shield</span><span class="qtdItem">x1</span></div>
+                            <div class="inventario-item"><img src="./recursos.png" class="icon-item" alt="" srcset="">
+                                <span class="inventario-item">Nano Blade</span><span class="qtdItem">x2</span></div>
+                            <div class="inventario-item"><img src="./recursos.png" class="icon-item" alt="" srcset="">
+                                <span class="inventario-item lendario">Plasma Grenade</span><span class="qtdItem">x5</span></div>
+                            <div class="inventario-item"><img src="./recursos.png" class="icon-item" alt="" srcset="">
+                                <span class="inventario-item">Void Armor</span><span class="qtdItem">x1</span></div>
+
+
+
+                        </div>
+
+
+                    </div>
+                    <div class="inventario-head">
+                        <div class="inventario-footer">
+                            <span>Dracmas: 87.75@</span>
+                            <span>Dracmas: 87.75@</span>
+                            <span>Dracmas: 87.75@</span>
+                        </div>
+                        
+                        
+                        <div class="inventario-footer">
+                            <span>Minerios: 857@</span>
+                            <span>Pedras: 47@</span>
+                            <span>Poçoes: 17@</span>
+                        </div>
+                        
+
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="hud-right">
+            <div class="personagem">
+                <div class="status">
+                    <div class="container-hp">
+                        <div class="info" id="textHP-HUD"></div>
+                        <div class="progress-hp">
+                            <div class="bar-hp" id="hpBar"></div>
+                        </div>
+                    </div>
+                    <div class="container-energy">
+                        <div class="progress-energy">
+                            <div class="bar-energy" id="energyBar"></div>
+                        </div>
+                        <div class="info" id="textEnergia-HUD"></div>
+                    </div>
+                    <div class="info">
+                        <!-- Adicionar informações adicionais do personagem aqui, se necessário -->
+                    </div>
+                </div>
+                <div class="portrait">
+                    <img src="./assets/portraits/player.png" alt="" srcset="">
+                    <span id="textLevel-HUD"></span>
+                </div>
+            </div>
+            <div id="terminal">
+                <div class="log">
+                    <textarea name="" id="log" cols="26" rows="7"
+                        style="resize: none; background-color: black; border: none;" readonly></textarea>
+                </div>
+                <!-- 
+                <div id="input-area" style="text-align: center;">
+                    <span id="prompt" style="color: aqua;">>_</span>
+                    <input type="text" style="text-align: center;" id="terminal-input" placeholder="Digite seu comando..."  autocomplete="off"/>
+                </div>
+                -->
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
